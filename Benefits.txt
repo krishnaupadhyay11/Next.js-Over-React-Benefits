@@ -1,0 +1,23 @@
+1. Rendering
+
+React, by default, does 'Client-side Rendering', i.e., when a webpage is requested, the server sends basic HTML, CSS, JavaScript files to the browser and the browser executes the code by itself.
+But, in 'Server-side Rendering', the code is executed on the server side, the webpage is rendered, and the rendered webpage is sent to the browser resulting in faster page loads and SEO by helping search engine crawlers read the webpage content fully and appropriately. Next.JS does that.
+
+2. Routing
+In React, we have to manually define routes for our websites and implement them by using an additional package called React Router DOM. But Next.js does that for us, dynamically, using 'file-based routing', i.e., folders in the app directory are auto-classified as routes.
+
+3. API Routes
+Serverless APIs. Create API endpoints simply by crearing a route.js file -> profile folder -> app directory.
+
+4. Automatic Code Splitting
+Code Splitting is a technique that breaks down large bundles of JS code into smaller, more manageable chunks that can be loaded as needed, resulting in faster load times, better UX.
+
+In React:
+    const About = lazy(() => import('./About'))
+    const App = () => {
+        return (
+            <Suspense fallback={<div>Loading</div>}>
+                <Text>Hello World!</Text>
+            </Suspense>
+        )
+    }
