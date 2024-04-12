@@ -1,2 +1,68 @@
 # Next.js-Over-React-Benefits
 A list of different features Next.js provides to make development process more robust, scalable and faster over plain React.
+
+# 1. Rendering
+
+React, by default, does 'Client-side Rendering', i.e., when a webpage is requested, the server sends basic HTML, CSS, JavaScript files to the browser and the browser executes the code by itself.
+But, in 'Server-side Rendering', the code is executed on the server side, the webpage is rendered, and the rendered webpage is sent to the browser resulting in faster page loads and SEO by helping search engine crawlers read the webpage content fully and appropriately. Next.js does that.
+
+# 2. Routing
+In React, we have to manually define routes for our websites and implement them by using an additional package called React Router DOM. But Next.js does that for us, dynamically, using 'file-based routing', i.e., folders in the app directory are auto-classified as routes.
+
+# 3. API Routes
+Serverless APIs. Create API endpoints simply by crearing a route.js file -> profile folder -> app directory.
+
+# 4. Automatic Code Splitting
+Code Splitting is a technique that breaks down large bundles of js code into smaller, more manageable chunks that can be loaded as needed, resulting in faster load times, better UX.
+
+In React:
+    const About = lazy(() => import('./About'))
+    const App = () => {
+        return (
+            <Suspense fallback={<div>Loading</div>}>
+                <Text>Hello World!</Text>
+            </Suspense>
+        )
+    }
+
+In Next.js:
+    Automatic.
+
+
+----------------***----------------
+
+# Data Fetching in Next.js
+1. Server Side Rendering (SSR)
+2. Static Site Generation (SSG)
+3. Incremental Static Generation (ISG)
+
+1. SSR - Dynamic Server Rendered Data. Every data request to the server triggers a new rendering cycle, ensuring data is always up-to-date.
+
+2. SSG - SSR with Caching.
+
+3. ISG - Cache but refetch after a specified time interval.
+
+
+----------------***----------------
+
+# Server + Serverless Backend.
+
+Server:
+Server files can directly be created in the app directory using whichever backend framework you like.
+
+Serverless:
+app > api > specificHandler(Folder) > route.js > export async functionsToHandle(GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS)
+
+----------------***----------------
+
+# SEO:
+As mentioned server-side rendering improves SEO and along with that you can describe your app to make it easy for search engine crawlers recognize it.
+
+export const metadata = {
+    title: 'Home',
+}
+    OR
+export async function generateMetadata({params, searchParams}){
+    const product = await getProduct(params.id); //get pages' name
+    return {title: product.title}
+}
