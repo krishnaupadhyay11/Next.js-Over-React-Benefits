@@ -28,7 +28,6 @@ In React:
 In Next.js:
     Automatic.
 
-
 ----------------***----------------
 
 # Data Fetching in Next.js
@@ -41,7 +40,6 @@ In Next.js:
 2. SSG - SSR with Caching.
 
 3. ISG - Cache but refetch after a specified time interval.
-
 
 ----------------***----------------
 
