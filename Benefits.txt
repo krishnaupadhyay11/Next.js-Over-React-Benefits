@@ -21,3 +21,43 @@ In React:
             </Suspense>
         )
     }
+
+In Next.JS:
+    Automatic.
+
+
+----------------***----------------
+
+Data Fetching in Next.JS
+1. Server Side Rendering (SSR)
+2. Static Site Generation (SSG)
+3. Incremental Static Generation (ISG)
+
+1. SSR - Dynamic Server Rendered Data. Every data request to the server triggers a new rendering cycle, ensuring data is always up-to-date.
+
+2. SSG - SSR with Caching.
+
+3. ISG - Cache but refetch after a specified time interval.
+
+
+----------------***----------------
+
+Server + Serverless Backend.
+
+Server:
+Server files can directly be created in the app directory.
+
+Serverless:
+app > api > specificHandler(Folder) > route.js > export async functionsToHandle(GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS)
+
+----------------***----------------
+
+SEO:
+export const metadata = {
+    title: 'Home',
+}
+    OR
+export async function generateMetadata({params, searchParams}){
+    const product = await getProduct(params.id); //get pages' name
+    return {title: product.title}
+}
